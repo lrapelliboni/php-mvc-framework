@@ -4,8 +4,8 @@ return [
     'default_action' => 'index',
     'database' => [
         'hostname' => 'localhost',
-        'username' => 'dontis',
-        'password' => 'efXOcP6',
-        'database' => 'dontis'
+        'username' => 'your username',
+        'password' => 'your password',
+        'database' => 'your database'
     ]
 ];
