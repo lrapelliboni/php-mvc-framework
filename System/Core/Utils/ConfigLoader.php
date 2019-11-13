@@ -1,8 +1,8 @@
 <?php
 namespace System\Core\Utils;
 
-class ConfigLoader {
-    
+class ConfigLoader
+{
     /**
      * @var string[]
      */
@@ -23,7 +23,7 @@ class ConfigLoader {
      */
     public static function getInstance()
     {
-        if  (self::$instance === null) {
+        if (self::$instance === null) {
             self::$instance = new ConfigLoader();
         }
         return self::$instance;
@@ -33,16 +33,17 @@ class ConfigLoader {
      * @param string $key
      * @return string
      */
-    public function getValue($key) 
+    public function getValue($key)
     {
         if (strpos($key, '.') !== false) {
             $dots = explode('.', $key);
             $currentValue = null;
             foreach ($dots as $dotKey) {
-                if ($currentValue == null)
+                if ($currentValue == null) {
                     $currentValue = $this->appConfiguration[$dotKey];
-                else
+                } else {
                     $currentValue = $currentValue[$dotKey];
+                }
             }
             return $currentValue;
         } else {

@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+
 use App\Utils\MySQLConnect;
 use System\Core\Controller;
 
@@ -19,6 +20,6 @@ class HomeController extends Controller {
 
     public function about()
     {
-        return $this->view('home/about');
+        return $this->view('home/about', ['title' => 'About']);
     }
 }

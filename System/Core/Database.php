@@ -1,8 +1,10 @@
 <?php
 namespace System\Core;
+
 use \System\Core\Utils\ConfigLoader;
 
-abstract class Database {
+abstract class Database
+{
     /**
      * @var string
      */
@@ -27,7 +29,7 @@ abstract class Database {
     /**
      * @param string $adapter
      */
-    public function __construct($adapter) 
+    public function __construct($adapter)
     {
         $configLoaderInstance  = (ConfigLoader::getInstance());
         $this->hostname = $configLoaderInstance->getValue('database.hostname');
@@ -52,19 +54,19 @@ abstract class Database {
     {
         try {
             return new \PDO(
-                $this->getConnectionString(), 
-                $this->username, 
+                $this->getConnectionString(),
+                $this->username,
                 $this->password
             );
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             printf('Erro de conexão: %s', $e->getMessage());
-        }        
+        }
     }
 
     /**
      * @return \PDO
      */
-    public function connect() 
+    public function connect()
     {
         return $this->getConnection();
     }

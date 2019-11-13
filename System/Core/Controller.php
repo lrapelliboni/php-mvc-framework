@@ -1,8 +1,9 @@
-<?php 
+<?php
 namespace System\Core;
 
-class Controller {
-    protected function view($viewName, $viewBag = []) 
+class Controller
+{
+    protected function view($viewName, $viewBag = [])
     {
         if (count($viewBag) > 0) {
             foreach ($viewBag as $bagIndex => $bagValue) {
